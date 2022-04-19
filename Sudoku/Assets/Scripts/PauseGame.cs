@@ -3,6 +3,7 @@ using UnityEngine;
 public class PauseGame : MonoBehaviour
 {
     [SerializeField] private GameObject _pausePanel;
+    [SerializeField] private GameObject _mainGrid;
 
     private bool _pauseStatus;
 
@@ -28,9 +29,11 @@ public class PauseGame : MonoBehaviour
     private void SetGamePause()
     {
         Time.timeScale = 0f;
+        _mainGrid.SetActive(false);
     }
     private void SetGameUnPause()
     {
         Time.timeScale = 1f;
+        _mainGrid.SetActive(true);
     }
 }
